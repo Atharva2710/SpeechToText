@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Pad</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="scanline"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch" data-text="VOICE_RECOGNITION_TERMINAL">VOICE_RECOGNITION_TERMINAL</h1>
+            <p class="terminal-text">&gt; Initialize voice input protocol...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message">
+            <span class="error-icon">⚠</span>
+            <span id="errorText"></span>
+        </div>
+
+        <div class="main-card">
+            <div class="card-corner top-left"></div>
+            <div class="card-corner top-right"></div>
+            <div class="card-corner bottom-left"></div>
+            <div class="card-corner bottom-right"></div>
+
+            <div class="controls">
+                <button id="micBtn" class="btn btn-primary">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">
+                        <span class="icon">◉</span>
+                        START_LISTENING
+                    </span>
+                </button>
+                <button id="saveBtn" class="btn btn-save" disabled>
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">
+                        <span class="icon">▼</span>
+                        SAVE
+                    </span>
+                </button>
+                <button id="clearBtn" class="btn btn-clear" disabled>
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">
+                        <span class="icon">✕</span>
+                        CLEAR
+                    </span>
+                </button>
+            </div>
+
+            <div class="status">
+                <div class="status-bar">
+                    <div id="statusDot" class="status-dot"></div>
+                    <span id="statusText" class="status-label">SYSTEM_IDLE</span>
+                </div>
+                <div class="audio-visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="textarea-wrapper">
+                <div class="textarea-label">&gt; VOICE_OUTPUT:</div>
+                <textarea id="transcript" placeholder="// Awaiting voice input..."></textarea>
+                <div class="textarea-border"></div>
+            </div>
+
+            <div class="word-count">
+                <span class="count-label">WORD_COUNT:</span>
+                <span id="wordCount" class="count-value">0</span>
+            </div>
+        </div>
+
+        <div id="savedNotes" class="saved-notes">
+            <div class="notes-header">
+                <h2 class="notes-title">
+                    <span class="title-icon">▣</span>
+                    STORED_TRANSCRIPTIONS
+                    <span class="note-counter">[<span id="noteCount">0</span>]</span>
+                </h2>
+            </div>
+            <div id="notesList" class="notes-list"></div>
+        </div>
+
+        <div class="browser-note">
+            <span class="blink">▸</span> OPTIMIZED FOR: Chrome | Edge | Safari
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
